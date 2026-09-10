@@ -18,6 +18,13 @@ const JOBS = [
     html: 'Folleto del asistente.html',
     pdf: 'Folleto del asistente.pdf',
     opts: { format: 'A4', printBackground: true, preferCSSPageSize: true },
+    // Páginas interiores al 70% con una sección por página (la portada no se toca).
+    // Sin esto, Chrome >= 150 imprime el folleto a 12 páginas con cortes huérfanos.
+    style: `@media print {
+      .page { zoom: 0.70; width: calc(210mm / 0.70) !important; padding: calc(16mm / 0.70) calc(22mm / 0.70) !important; min-height: 0 !important; }
+      .toc { break-after: page; page-break-after: always; }
+      .prompt-box { break-inside: avoid; }
+    }`,
   },
   {
     html: '10 Prompts esenciales.html',
@@ -40,6 +47,7 @@ for (const job of JOBS) {
   console.log(`→ ${job.html}`)
   const page = await ctx.newPage()
   await page.goto(url, { waitUntil: 'networkidle' })
+  if (job.style) await page.addStyleTag({ content: job.style })
   await page.emulateMedia({ media: 'print' })
   await page.pdf({ path: out, ...job.opts })
   await page.close()

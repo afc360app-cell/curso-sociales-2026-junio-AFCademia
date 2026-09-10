@@ -97,7 +97,7 @@ export default function Home() {
             borderRadius: 100,
             marginBottom: 24,
           }}>
-            Materiales · Ponencia 16 jun 2026 · Málaga
+            Materiales · Ponencia 14 sept 2026 · Málaga
           </div>
 
           <h1 style={{ color: '#fff', fontSize: 'clamp(28px, 5vw, 48px)', fontWeight: 900, lineHeight: 1.1, marginBottom: 20, letterSpacing: '-1px' }}>

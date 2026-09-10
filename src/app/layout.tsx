@@ -5,7 +5,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'], weight: ['400', '500', '600', '700', '800', '900'] })
 
 export const metadata: Metadata = {
-  title: 'IA aplicada al sector jurídico-laboral · Málaga 16 jun 2026 | AFCademIA',
+  title: 'IA aplicada al sector jurídico-laboral · Málaga 14 sept 2026 | AFCademIA',
   description: 'Materiales de la ponencia de Roberto Díaz en el Colegio GS Málaga y Melilla: diapositivas, folleto del asistente, 10 prompts esenciales y tarjeta A5 de referencia rápida.',
   keywords: 'IA, jurídico, laboral, graduados sociales, Málaga, Roberto Díaz, AFCademIA, prompts, RGPD',
   icons: {

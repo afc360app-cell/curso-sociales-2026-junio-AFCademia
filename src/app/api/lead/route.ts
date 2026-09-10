@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabase/admin'
 
-const NOMBRE_FLUJO = 'curso-sociales-2026-junio'
-const SOURCE = 'Curso Sociales 2026 · Junio · Málaga'
+const NOMBRE_FLUJO = 'curso-sociales-2026-septiembre'
+const SOURCE = 'Curso Sociales 2026 · Septiembre · Málaga'
 const CONSENT_TEXT = 'Acepto la política de protección de datos'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -69,8 +69,8 @@ export async function POST(request: NextRequest) {
 
     const isFirstTime = !existingFlujo
     const tagsProceso = isFirstTime
-      ? ['nuevo', 'cursos-sociales-2026', 'junio-2026', 'ia-juridico-laboral']
-      : ['recurrente', 'cursos-sociales-2026', 'junio-2026', 'ia-juridico-laboral']
+      ? ['nuevo', 'cursos-sociales-2026', 'septiembre-2026', 'ia-juridico-laboral']
+      : ['recurrente', 'cursos-sociales-2026', 'septiembre-2026', 'ia-juridico-laboral']
 
     const { error: flujoError } = await supabaseAdmin
       .from('flujos_embudo')
@@ -110,7 +110,7 @@ export async function POST(request: NextRequest) {
           tipo: 'descarga',
           metadata: {
             fuente: NOMBRE_FLUJO,
-            evento: 'IA aplicada al sector jurídico-laboral · Málaga 16 jun 2026',
+            evento: 'IA aplicada al sector jurídico-laboral · Málaga 14 sept 2026',
             nombre,
             email,
             // Prueba de consentimiento reforzada (PD-09)
