@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Footer from '@/shared/components/Footer'
+import MoreSection from '@/shared/components/MoreSection'
 
 const DELIVERABLES = [
   {
@@ -314,6 +315,8 @@ export default function Home() {
           </form>
         </div>
       </section>
+
+      <MoreSection />
 
       <Footer />
     </main>
