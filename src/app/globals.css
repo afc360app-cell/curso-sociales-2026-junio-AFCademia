@@ -37,6 +37,35 @@ input:focus {
 }
 
 /* ========================================
+   Ponente (misma sección que la landing AFC Aragón/Santander)
+   ======================================== */
+:root {
+  --lp-navy: #003F6B;
+  --lp-orange: #F47A20;
+}
+.lp-container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+.lp-eyebrow { display: inline-block; font-family: var(--font-mono), ui-monospace, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--lp-orange); margin-bottom: 12px; }
+.lp-eyebrow--light { color: #ffb070; margin-bottom: 22px; }
+.lp-speaker { background: var(--lp-navy); color: #fff; padding: clamp(56px, 7vw, 96px) 0; position: relative; overflow: hidden; }
+.lp-speaker::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 85% 20%, rgba(244,122,32,0.14), transparent 35%); pointer-events: none; }
+.lp-speaker__grid { position: relative; display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.lp-speaker__photo { border-radius: 22px; overflow: hidden; box-shadow: 0 30px 70px rgba(0,0,0,0.4); aspect-ratio: 4 / 5; }
+.lp-speaker__photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+.lp-speaker h2 { font-family: var(--font-display), sans-serif; font-size: clamp(30px, 3.8vw, 44px); font-weight: 800; letter-spacing: -0.5px; line-height: 1.1; margin-bottom: 8px; color: #fff; }
+.lp-speaker__role { font-family: var(--font-mono), ui-monospace, monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #ffb070; margin-bottom: 20px; }
+.lp-speaker__bio { font-size: 16.5px; line-height: 1.65; color: rgba(255,255,255,0.8); margin-bottom: 28px; max-width: 58ch; }
+.lp-speaker__keys { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.lp-speaker__keys li { border-left: 3px solid var(--lp-orange); padding: 4px 0 4px 14px; }
+.lp-speaker__keys b { display: block; font-family: var(--font-display), sans-serif; font-weight: 600; font-size: 15px; margin-bottom: 4px; color: #fff; }
+.lp-speaker__keys span { font-size: 13.5px; line-height: 1.5; color: rgba(255,255,255,0.7); }
+
+@media (max-width: 900px) {
+  .lp-speaker__grid { grid-template-columns: 1fr; }
+  .lp-speaker__photo { max-width: 360px; aspect-ratio: 1 / 1; }
+  .lp-speaker__keys { grid-template-columns: 1fr; }
+}
+
+/* ========================================
    Footer (réplica del sitio principal AFCademIA)
    ======================================== */
 :root {
@@ -248,10 +277,5 @@ input:focus {
 
   .mobile-copyright {
     display: block;
-  }
-}
-@media (max-width: 640px) {
-  .ponente-grid {
-    grid-template-columns: 1fr !important;
   }
 }
