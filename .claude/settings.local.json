@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sIL \"https://api.anthropic.com/v1/design/h/aJ4es2eA0TtGjoPIzS52IQ\")",
+      "Bash(curl -sL \"https://api.anthropic.com/v1/design/h/aJ4es2eA0TtGjoPIzS52IQ\" -o /tmp/design.html)",
+      "Bash(curl -sL --compressed \"https://api.anthropic.com/v1/design/h/aJ4es2eA0TtGjoPIzS52IQ\" -o /tmp/design.html)",
+      "Bash(curl -sL -H \"Accept-Encoding: gzip\" \"https://api.anthropic.com/v1/design/h/aJ4es2eA0TtGjoPIzS52IQ\")",
+      "Bash(gunzip)",
+      "Bash(tar -xf /tmp/design.html)",
+      "Bash(awk '/<body|<\\\\/head>/' \"public/Diapositivas.html\")",
+      "Bash(mkdir -p public/assets public/slides public/folleto public/prompts public/tarjeta public/ponente)",
+      "Bash(cp public/logo-afcademia.webp public/assets/logo-afcademia.webp)",
+      "Bash(cp /tmp/design/entregables/project/ponencia/slides/Diapositivas.html /tmp/design/entregables/project/ponencia/slides/styles.css /tmp/design/entregables/project/ponencia/slides/deck-stage.js public/slides/)",
+      "Bash(cp '/tmp/design/entregables/project/ponencia/folleto/Folleto del asistente.html' /tmp/design/entregables/project/ponencia/folleto/styles.css public/folleto/)",
+      "Bash(cp '/tmp/design/entregables/project/ponencia/prompts/10 Prompts esenciales.html' /tmp/design/entregables/project/ponencia/prompts/styles.css public/prompts/)",
+      "Bash(cp '/tmp/design/entregables/project/ponencia/tarjeta/Tarjeta A5.html' public/tarjeta/)",
+      "Bash(cp '/tmp/design/entregables/project/ponencia/ponente/Guion del ponente.html' '/tmp/design/entregables/project/ponencia/ponente/FAQ del ponente.html' '/tmp/design/entregables/project/ponencia/ponente/Plan B y Checklist.html' /tmp/design/entregables/project/ponencia/ponente/styles.css public/ponente/)",
+      "Bash(rm \"public/Diapositivas.html\" \"public/Folleto del asistente.html\" \"public/10 Prompts esenciales.html\" \"public/Tarjeta A5.html\" \"public/styles.css\" \"public/deck-stage.js\" && echo OK)",
+      "Bash(curl -sI \"http://localhost:3003/slides/Diapositivas.html\")",
+      "Bash(taskkill //F //PID 2029)",
+      "Bash(taskkill //F //PID 2037)",
+      "Bash(taskkill //F //PID 28276)",
+      "Bash(grep -oE '\\(href|src\\)=\"[^\"]{1,80}\"' \"public/slides/Diapositivas.html\")",
+      "Bash(grep -oE '\\(href|src\\)=\"[^\"]{1,80}\"' \"public/folleto/Folleto del asistente.html\")",
+      "Bash(grep -oE '\\(href|src\\)=\"[^\"]{1,80}\"' \"public/prompts/10 Prompts esenciales.html\")",
+      "Bash(grep -oE '\\(href|src\\)=\"[^\"]{1,80}\"' \"public/tarjeta/Tarjeta A5.html\")",
+      "Bash(grep -oE '<script[^>]{0,200}' \"public/slides/Diapositivas.html\")",
+      "Bash(git commit -m ' *)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\manel\\.000.Proyectos.DEV\\006. Landing AFC Curso Graduados sociales\\public"
+    ]
+  }
+}
