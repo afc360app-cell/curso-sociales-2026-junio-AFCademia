@@ -142,6 +142,43 @@ export default function Home() {
           ))}
         </div>
 
+        {/* Ponente */}
+        <div
+          style={{
+            background: '#fff',
+            border: '1px solid #e8e4dc',
+            borderRadius: 20,
+            padding: 'clamp(24px, 4vw, 40px)',
+            marginBottom: 40,
+            boxShadow: '0 2px 12px rgba(0,63,107,0.06)',
+          }}
+        >
+          <div style={{ fontSize: 11, fontWeight: 700, color: '#F47A20', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>
+            Quién da la charla
+          </div>
+          <h2 style={{ fontSize: 24, fontWeight: 800, color: '#003F6B', marginBottom: 4, lineHeight: 1.2 }}>Roberto Díaz</h2>
+          <p style={{ fontSize: 14, fontWeight: 600, color: '#7a7060', marginBottom: 16 }}>
+            Administrador de fincas en ejercicio y formador en AFCademIA
+          </p>
+          <p style={{ fontSize: 15, color: '#3d3a34', lineHeight: 1.6, marginBottom: 24, maxWidth: 720 }}>
+            Automatizó su propio despacho y hoy enseña a otros administradores a hacer lo mismo. Los flujos que construyó
+            trabajan cada día en su gestión con Make, Power Automate y Microsoft 365, y son la base de lo que enseña:
+            automatizaciones reales, con un antes y un después medible en horas y en errores.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }} className="ponente-grid">
+            {[
+              { t: 'Práctica, no teoría', d: 'Enseña los flujos que él mismo usa cada día en su despacho, no diapositivas.' },
+              { t: 'Del sector, para el sector', d: 'Habla tu idioma: remesas, incidencias, juntas, comunicaciones a propietarios.' },
+              { t: 'Tiempo recuperado', d: 'Crecer gestionando más fincas sin multiplicar el equipo ni el estrés.' },
+            ].map((item) => (
+              <div key={item.t} style={{ borderLeft: '3px solid #F47A20', paddingLeft: 14 }}>
+                <h3 style={{ fontSize: 14, fontWeight: 700, color: '#003F6B', marginBottom: 4 }}>{item.t}</h3>
+                <p style={{ fontSize: 13, color: '#7a7060', lineHeight: 1.5 }}>{item.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Form card */}
         <div style={{
           background: '#fff',
